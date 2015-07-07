@@ -56,7 +56,6 @@ class Ftp extends Storage {
 		$ctimeEnd = time();
 		$mTime = $this->instance->filemtime('/lorem.txt');
 		$this->assertTrue($this->instance->hasUpdated('/lorem.txt', $ctimeStart - 5));
-		$mtime = $this->instance->filemtime('/');
 		$this->assertTrue($this->instance->hasUpdated('/', $ctimeStart - 61));
 
 		// check that ($ctimeStart - 5) <= $mTime <= ($ctimeEnd + 1)
