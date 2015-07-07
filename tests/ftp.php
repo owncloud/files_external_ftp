@@ -41,7 +41,9 @@ class Ftp extends Storage {
 	}
 
 	protected function tearDown() {
-		$this->instance->disconnect();
+		if ($this->instance) {
+			$this->instance->disconnect();
+		}
 		parent::tearDown();
 	}
 
