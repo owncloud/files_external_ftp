@@ -115,7 +115,7 @@ class FTP extends Flysystem {
 			];
 		} else {
 			return [
-				'mtime' => $info['timestamp'],
+				'mtime' => isset($info['timestamp']) ? $info['timestamp'] : -1,
 				'size' => $info['size']
 			];
 		}
