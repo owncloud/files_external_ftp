@@ -90,21 +90,6 @@ class FTP extends Flysystem {
 	}
 
 	/**
-	 * construct the ftp url
-	 *
-	 * @param string $path
-	 * @return string
-	 */
-	public function constructUrl($path) {
-		$url = 'ftp';
-		if ($this->secure) {
-			$url .= 's';
-		}
-		$url .= '://' . $this->username . ':' . $this->password . '@' . $this->host . ':' . $this->port . Filesystem::normalizePath($this->root) . Filesystem::normalizePath($path);
-		return rtrim($url, '/');
-	}
-
-	/**
 	 * {@inheritdoc}
 	 */
 	public function filemtime($path) {
