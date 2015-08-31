@@ -95,7 +95,7 @@ class FTP extends Flysystem {
 	public function filemtime($path) {
 		if ($this->is_dir($path)) {
 			$connection = $this->flysystem->getAdapter()->getConnection();
-			$listing = ftp_rawlist($connection, '-lna ' . $path);
+			$listing = ftp_rawlist($connection, '-lna ' . $this->buildPath($path));
 			$metadata = $this->flysystem->getAdapter()->normalizeObject($listing[0], '');
 			return $metadata['timestamp'];
 		} else {
