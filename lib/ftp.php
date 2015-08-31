@@ -108,16 +108,9 @@ class FTP extends Flysystem {
 	 */
 	public function stat($path) {
 		$info = $this->flysystem->getWithMetadata($this->buildPath($path), ['size']);
-		if ($info['type'] === 'file') {
-			return [
-				'mtime' => parent::filemtime($path), // timestamp from metadata is lower resolution
-				'size' => $info['size']
-			];
-		} else {
-			return [
-				'mtime' => isset($info['timestamp']) ? $info['timestamp'] : -1,
-				'size' => $info['size']
-			];
-		}
+		return [
+			'mtime' => $this->filemtime($path),
+			'size' => $info['size']
+		];
 	}
 }
