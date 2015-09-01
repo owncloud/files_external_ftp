@@ -20,8 +20,6 @@
  */
 namespace OCA\Files_External_FTP;
 
-use League\Flysystem\FileNotFoundException;
-use OC\Files\Filesystem;
 use OC\Files\Storage\Flysystem;
 use OC\Files\Storage\PolyFill\CopyDirectory;
 
