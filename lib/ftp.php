@@ -104,6 +104,42 @@ class FTP extends Flysystem {
 	/**
 	 * {@inheritdoc}
 	 */
+	public function rmdir($path) {
+		try {
+			$result = @$this->flysystem->deleteDir($this->buildPath($path));
+			// recursive rmdir support depends on the ftp server
+			if ($result) {
+				return $result;
+			} else {
+				return $this->recursiveRmDir($path);
+			}
+		} catch (FileNotFoundException $e) {
+			return false;
+		}
+	}
+
+	/**
+	 * @param string $path
+	 * @return bool
+	 */
+	private function recursiveRmDir($path) {
+		$contents = $this->flysystem->listContents($this->buildPath($path));
+		$result = true;
+		foreach ($contents as $content) {
+			if ($content['type'] === 'dir') {
+				$result = $result && $this->recursiveRmDir($path . '/' . $content['basename']);
+			} else {
+				$result = $result && $this->flysystem->delete($this->buildPath($path . '/' . $content['basename']));
+			}
+		}
+		$result = $result && @$this->flysystem->deleteDir($this->buildPath($path));
+
+		return $result;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
 	public function stat($path) {
 		$info = $this->flysystem->getWithMetadata($this->buildPath($path), ['size']);
 		return [
