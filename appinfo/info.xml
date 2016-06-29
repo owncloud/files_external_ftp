@@ -5,11 +5,12 @@
 	<description>FTP backend for files_external</description>
 	<licence>AGPL</licence>
 	<author>Robin Appelman</author>
+	<version>0.1.0</version>
 	<types>
 		<filesystem/>
 	</types>
 
 	<dependencies>
-		<owncloud min-version="8.1"/>
+		<owncloud min-version="9.1" max-version="9.2"/>
 	</dependencies>
 </info>
