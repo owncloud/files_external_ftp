@@ -2,6 +2,9 @@
 
 $l = \OC::$server->getL10N('files_external_ftp');
 
+if (!class_exists('OC_Mount_Config')) {
+	OC_App::loadApp('files_external');
+}
 OC_Mount_Config::registerBackend('\OCA\Files_External_FTP\FTP', [
 	'backend' => (string)$l->t('FTP (Fly)'),
 	'priority' => 100,
@@ -10,7 +13,7 @@ OC_Mount_Config::registerBackend('\OCA\Files_External_FTP\FTP', [
 		'username' => (string)$l->t('Username'),
 		'password' => (string)$l->t('Password'),
 		'root' => '&' . $l->t('Remote subfolder'),
-		'ssl' => '!' . $l->t('Secure ftps://'),
+		'secure' => '!' . $l->t('Secure ftps://'),
 		'port' => '&' . $l->t('Port'),
 	],
 ]);
