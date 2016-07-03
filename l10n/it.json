@@ -1,4 +1,5 @@
 { "translations": {
+    "FTP (Fly)" : "FTP (Fly)",
     "hostname" : "nome host",
     "Username" : "Nome utente",
     "Password" : "Password",

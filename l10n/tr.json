@@ -1,0 +1,10 @@
+{ "translations": {
+    "FTP (Fly)" : "FTP (Fly)",
+    "hostname" : "Makine adı",
+    "Username" : "Kullanıcı adı",
+    "Password" : "Parola",
+    "Remote subfolder" : "Uzak alt klasör",
+    "Secure ftps://" : "Güvenli ftps://",
+    "Port" : "Port"
+},"pluralForm" :"nplurals=2; plural=(n > 1);"
+}

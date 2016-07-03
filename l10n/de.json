@@ -1,6 +1,6 @@
 { "translations": {
     "FTP (Fly)" : "FTP (Fly)",
-    "hostname" : "Hostname",
+    "hostname" : "Host-Name",
     "Username" : "Benutzername",
     "Password" : "Passwort",
     "Remote subfolder" : "Entfernter Unterordner",
