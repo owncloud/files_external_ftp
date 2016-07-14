@@ -2,7 +2,7 @@ OC.L10N.register(
     "files_external_ftp",
     {
     "FTP (Fly)" : "FTP (Fly)",
-    "hostname" : "Nombre de equipo",
+    "hostname" : "Nombre del servidor",
     "Username" : "Nombre de usuario",
     "Password" : "Contraseña",
     "Remote subfolder" : "Subcarpeta remota",
