@@ -4,7 +4,7 @@
     "Username" : "Nombre de usuario",
     "Password" : "Contraseña",
     "Remote subfolder" : "Subcarpeta remota",
-    "Secure ftps://" : "—Seguro— ftps://",
+    "Secure ftps://" : "Seguro ftps://",
     "Port" : "Puerto"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

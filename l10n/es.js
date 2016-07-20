@@ -6,7 +6,7 @@ OC.L10N.register(
     "Username" : "Nombre de usuario",
     "Password" : "Contraseña",
     "Remote subfolder" : "Subcarpeta remota",
-    "Secure ftps://" : "—Seguro— ftps://",
+    "Secure ftps://" : "Seguro ftps://",
     "Port" : "Puerto"
 },
 "nplurals=2; plural=(n != 1);");
