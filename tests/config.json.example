@@ -1,5 +1,5 @@
 {
   "host": "localhost",
-  "username": "test",
+  "user": "test",
   "password": "test"
 }

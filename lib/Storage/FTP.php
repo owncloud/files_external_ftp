@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
-namespace OCA\Files_External_FTP;
+namespace OCA\Files_external_ftp\Storage;
 
 use League\Flysystem\FileNotFoundException;
 use OC\Files\Storage\Flysystem;
@@ -39,9 +39,9 @@ class FTP extends Flysystem {
 	private $adapter;
 
 	public function __construct($params) {
-		if (isset($params['host']) && isset($params['username']) && isset($params['password'])) {
+		if (isset($params['host']) && isset($params['user']) && isset($params['password'])) {
 			$this->host = $params['host'];
-			$this->username = $params['username'];
+			$this->username = $params['user'];
 			$this->password = $params['password'];
 			if (isset($params['secure'])) {
 				if (is_string($params['secure'])) {
@@ -57,14 +57,14 @@ class FTP extends Flysystem {
 
 			$this->adapter = new Adapter([
 				'host' => $params['host'],
-				'username' => $params['username'],
+				'username' => $params['user'],
 				'password' => $params['password'],
 				'port' => $this->port,
 				'ssl' => $this->secure
 			]);
 			$this->buildFlySystem($this->adapter);
 		} else {
-			throw new \Exception('Creating \OCA\Files_External_FTP\FTP storage failed');
+			throw new \Exception('Creating \OCA\Files_external_ftp\FTP storage failed');
 		}
 	}
 

@@ -11,6 +11,9 @@
 	</types>
 
 	<dependencies>
-		<owncloud min-version="9.1" max-version="9.2"/>
+		<owncloud min-version="9.2" max-version="9.2"/>
 	</dependencies>
+	<website>https://github.com/owncloud/files_external_ftp/</website>
+	<bugs>https://github.com/owncloud/files_external_ftp/issues</bugs>
+	<repository type="git">https://github.com/owncloud/files_external_ftp.git</repository>
 </info>
