@@ -1,0 +1,9 @@
+{ "translations": {
+    "hostname" : "όνομα κεντρικού υπολογιστή",
+    "Username" : "Όνομα χρήστη",
+    "Password" : "Κωδικός πρόσβασης",
+    "Remote subfolder" : "Απομακρυσμένος υποφάκελος",
+    "Secure ftps://" : "Ασφαλής ftps://",
+    "Port" : "Θύρα"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
