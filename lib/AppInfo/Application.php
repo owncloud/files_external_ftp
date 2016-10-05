@@ -21,11 +21,10 @@
 
 namespace OCA\Files_external_ftp\AppInfo;
 
-use \OCP\AppFramework\App;
+use OCP\AppFramework\App;
 use OCP\AppFramework\IAppContainer;
-use \OCP\IContainer;
-use \OCA\Files_External\Service\BackendService;
-use \OCA\Files_External\Lib\Config\IBackendProvider;
+use OCP\IContainer;
+use OCP\Files\External\Config\IBackendProvider;
 
 /**
  * @package OCA\Files_External_FTP\AppInfo

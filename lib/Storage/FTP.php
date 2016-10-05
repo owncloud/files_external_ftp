@@ -39,9 +39,9 @@ class FTP extends Flysystem {
 	private $adapter;
 
 	public function __construct($params) {
-		if (isset($params['host']) && isset($params['user']) && isset($params['password'])) {
+		if (isset($params['host']) && isset($params['username']) && isset($params['password'])) {
 			$this->host = $params['host'];
-			$this->username = $params['user'];
+			$this->username = $params['username'];
 			$this->password = $params['password'];
 			if (isset($params['secure'])) {
 				if (is_string($params['secure'])) {
@@ -57,7 +57,7 @@ class FTP extends Flysystem {
 
 			$this->adapter = new Adapter([
 				'host' => $params['host'],
-				'username' => $params['user'],
+				'username' => $params['username'],
 				'password' => $params['password'],
 				'port' => $this->port,
 				'ssl' => $this->secure

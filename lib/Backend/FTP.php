@@ -22,22 +22,22 @@
 namespace OCA\Files_external_ftp\Backend;
 
 use \OCP\IL10N;
-use \OCA\Files_External\Lib\Backend\Backend;
-use \OCA\Files_External\Lib\DefinitionParameter;
-use \OCA\Files_External\Lib\Auth\AuthMechanism;
-use \OCA\Files_External\Service\BackendService;
-
-use \OCA\Files_External\Lib\Auth\Password\Password;
+use \OCP\Files\External\Backend\Backend;
+use \OCP\Files\External\DefinitionParameter;
+use \OCP\Files\External\Auth\AuthMechanism;
 
 class FTP extends Backend {
 
-	public function __construct(IL10N $l, Password $legacyAuth) {
+	public function __construct(IL10N $l) {
 		$this
 			->setIdentifier('ftp')
 			->addIdentifierAlias('\OC\Files\Storage\FTP') // legacy compat
 			->setStorageClass('\OCA\Files_external_ftp\Storage\FTP')
 			->setText($l->t('FTP (Fly)'))
 			->addParameters([
+				(new DefinitionParameter('username', $l->t('Username'))),
+				(new DefinitionParameter('password', $l->t('Password')))
+					->setType(DefinitionParameter::VALUE_PASSWORD),
 				(new DefinitionParameter('host', $l->t('Host'))),
 				(new DefinitionParameter('root', $l->t('Root')))
 					->setFlag(DefinitionParameter::FLAG_OPTIONAL),
@@ -46,8 +46,7 @@ class FTP extends Backend {
 				(new DefinitionParameter('secure', $l->t('Secure ftps://')))
 					->setType(DefinitionParameter::VALUE_BOOLEAN),
 			])
-			->addAuthScheme(AuthMechanism::SCHEME_PASSWORD)
-			->setLegacyAuthMechanism($legacyAuth);
+			->addAuthScheme(AuthMechanism::SCHEME_BUILTIN);
 	}
 
 }
