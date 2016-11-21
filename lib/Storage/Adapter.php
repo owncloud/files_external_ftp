@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
-namespace OCA\Files_External_FTP;
+namespace OCA\Files_external_ftp\Storage;
 
 use League\Flysystem\Adapter\Ftp as FtpAdapter;
 use League\Flysystem\AdapterInterface;

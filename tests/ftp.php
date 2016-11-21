@@ -24,7 +24,7 @@
  *
  */
 
-namespace Test\Files_External_FTP;
+namespace Test\Files_external_ftp;
 
 use Test\Files\Storage\Storage;
 
@@ -36,7 +36,7 @@ class Ftp extends Storage {
 
 		$this->config = json_decode(file_get_contents('./config.json'), true);
 		$this->config['root'] = $this->getUniqueID();
-		$this->instance = new \OCA\Files_External_FTP\FTP($this->config);
+		$this->instance = new \OCA\Files_external_ftp\Storage\FTP($this->config);
 		$this->instance->mkdir('');
 	}
 

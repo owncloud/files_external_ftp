@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
-namespace OCA\Files_External_FTP;
+namespace OCA\Files_external_ftp\Storage;
 
 use League\Flysystem\FileNotFoundException;
 use OC\Files\Storage\Flysystem;
@@ -64,7 +64,7 @@ class FTP extends Flysystem {
 			]);
 			$this->buildFlySystem($this->adapter);
 		} else {
-			throw new \Exception('Creating \OCA\Files_External_FTP\FTP storage failed');
+			throw new \Exception('Creating \OCA\Files_external_ftp\FTP storage failed');
 		}
 	}
 
