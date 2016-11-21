@@ -21,10 +21,10 @@
 namespace OCA\Files_external_ftp\Storage;
 
 use League\Flysystem\FileNotFoundException;
-use OC\Files\Storage\Flysystem;
-use OC\Files\Storage\PolyFill\CopyDirectory;
+use OCP\Files\Storage\FlysystemStorageAdapter;
+use OCP\Files\Storage\PolyFill\CopyDirectory;
 
-class FTP extends Flysystem {
+class FTP extends FlysystemStorageAdapter {
 	use CopyDirectory;
 
 	private $host;
