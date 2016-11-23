@@ -1,10 +1,10 @@
 { "translations": {
     "FTP (Fly)" : "FTP (Fly)",
-    "hostname" : "nome do anfitrião (hostname)",
     "Username" : "Nome de utilizador",
     "Password" : "Palavra-passe",
-    "Remote subfolder" : "Subpasta remota ",
-    "Secure ftps://" : "ftps:// Seguro",
-    "Port" : "Porta"
+    "Host" : "Anfitrião",
+    "Root" : "Root",
+    "Port" : "Porta",
+    "Secure ftps://" : "ftps:// Seguro"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

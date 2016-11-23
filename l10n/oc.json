@@ -1,9 +1,9 @@
 { "translations": {
-    "hostname" : "Nom de l'òste",
     "Username" : "Identificant",
     "Password" : "Senhal",
-    "Remote subfolder" : "Sosdorsièr distant",
-    "Secure ftps://" : "Securizacion ftps://",
-    "Port" : "Pòrt"
+    "Host" : "Òste",
+    "Root" : "Raiç",
+    "Port" : "Pòrt",
+    "Secure ftps://" : "Securizacion ftps://"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

@@ -2,11 +2,11 @@ OC.L10N.register(
     "files_external_ftp",
     {
     "FTP (Fly)" : "FTP (Fly)",
-    "hostname" : "Host-Name",
     "Username" : "Benutzername",
     "Password" : "Passwort",
-    "Remote subfolder" : "Entfernter Unterordner",
-    "Secure ftps://" : "Sicherer ftps://",
-    "Port" : "Port"
+    "Host" : "Host",
+    "Root" : "Root",
+    "Port" : "Port",
+    "Secure ftps://" : "Sicherer ftps://"
 },
 "nplurals=2; plural=(n != 1);");

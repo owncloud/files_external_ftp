@@ -1,0 +1,9 @@
+{ "translations": {
+    "Username" : "Felhasználónév",
+    "Password" : "Jelszó",
+    "Host" : "Kiszolgáló",
+    "Root" : "Gyökér",
+    "Port" : "Port",
+    "Secure ftps://" : "Biztonságos ftps://"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}
