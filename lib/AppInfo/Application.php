@@ -22,8 +22,6 @@
 namespace OCA\Files_external_ftp\AppInfo;
 
 use OCP\AppFramework\App;
-use OCP\AppFramework\IAppContainer;
-use OCP\IContainer;
 use OCP\Files\External\Config\IBackendProvider;
 
 /**
