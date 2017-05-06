@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_external_ftp",
     {
+    "FTP (Fly)" : "FTP(Fly)",
     "Username" : "사용자 이름",
     "Password" : "암호",
     "Host" : "호스트",
