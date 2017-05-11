@@ -5,6 +5,7 @@ OC.L10N.register(
     "Username" : "Prisijungimo vardas",
     "Password" : "Slaptažodis",
     "Host" : "Mazgas",
+    "Root" : "Root",
     "Port" : "Prievadas",
     "Secure ftps://" : "Saugus ftps://"
 },
