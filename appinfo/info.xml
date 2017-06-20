@@ -6,7 +6,7 @@
 	<licence>AGPL</licence>
 	<author>Robin Appelman, Thomas Müller, Vincent Petry, Ilja Neumann</author>
 	<version>0.2.0</version>
-	<category>external-plugins</category>
+	<category>storage</category>
 	<types>
 		<filesystem/>
 	</types>
