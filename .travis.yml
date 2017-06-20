@@ -13,8 +13,8 @@ env:
 #    - FTPD=pure-ftpd
     - FTPD=proftpd
     - FTPD=vsftpd
-    - FTPD=proftpd CORE_BRANCH=master
-    - FTPD=vsftpd CORE_BRANCH=master
+    - FTPD=proftpd CORE_BRANCH=stable10
+    - FTPD=vsftpd CORE_BRANCH=stable10
 
 branches:
   only:
