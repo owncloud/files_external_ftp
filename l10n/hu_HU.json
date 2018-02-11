@@ -1,4 +1,5 @@
 { "translations": {
+    "FTP (Fly)" : "FTP (Felhő)",
     "Username" : "Felhasználónév",
     "Password" : "Jelszó",
     "Host" : "Kiszolgáló",
