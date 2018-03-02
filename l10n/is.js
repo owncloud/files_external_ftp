@@ -4,7 +4,7 @@ OC.L10N.register(
     "FTP (Fly)" : "FTP (Fly)",
     "Username" : "Notandanafn",
     "Password" : "Lykilorð",
-    "Host" : "Hýsill",
+    "Host" : "Hýsilvél",
     "Root" : "Rót (root)",
     "Port" : "Gátt",
     "Secure ftps://" : "Öruggt ftps://"
