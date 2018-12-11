@@ -16,7 +16,7 @@ Administrators and users (when enabled) can find external storage configuration 
 	</description>
 	<licence>AGPL</licence>
 	<author>Robin Appelman, Thomas Müller, Vincent Petry, Ilja Neumann</author>
-	<version>0.2.0</version>
+	<version>0.2.1</version>
 	<category>storage</category>
 	<types>
 		<filesystem/>

@@ -94,6 +94,7 @@ appstore:
 	lib \
 	LICENSE \
 	README.md \
+	CHANGELOG.md \
 	$(appstore_package_name)
 
 ifdef CAN_SIGN
