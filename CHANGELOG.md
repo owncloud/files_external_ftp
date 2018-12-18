@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
-## [0.2.1]
+## [Unreleased]
+
+## [0.2.1] - 2018-12-18
 
 ### Added
 
@@ -19,5 +21,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
  - Initial marketplace release
 
+[Unreleased]: https://github.com/owncloud/files_external_ftp/compare/v0.2.1...master
 [0.2.1]: https://github.com/owncloud/files_external_ftp/compare/v0.2.0...v0.2.1
 
