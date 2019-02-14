@@ -1,6 +1,8 @@
 # files_external_ftp
 Flysystem based ftp backend for ownCloud
 
+Trigger CI
+
 Requires ownCloud 10.0 or later
 
 [![Build Status](https://travis-ci.org/owncloud/files_external_ftp.svg?branch=master)](https://travis-ci.org/owncloud/files_external_ftp)
