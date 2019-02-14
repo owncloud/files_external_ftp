@@ -31,7 +31,7 @@ use Test\Files\Storage\Storage;
 class FtpTest extends Storage {
 	private $config;
 
-	protected function setUp() {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$this->config = \json_decode(\file_get_contents('./tests/unit/config.json'), true);
@@ -40,7 +40,7 @@ class FtpTest extends Storage {
 		$this->instance->mkdir('');
 	}
 
-	protected function tearDown() {
+	protected function tearDown(): void {
 		if ($this->instance) {
 			$this->instance->disconnect();
 		}
