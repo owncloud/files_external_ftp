@@ -45,6 +45,7 @@ script:
   # Run phpunit tests
   - cd tests
   - echo '{"host":"localhost","username":"test","password":"test"}' > config.json
+  - phpunit --version
   - phpunit --configuration phpunit.xml
 
   # Create coverage report
