@@ -31,8 +31,6 @@ before_install:
 
   - wget https://raw.githubusercontent.com/owncloud/administration/master/travis-ci/before_install.sh
   - bash ./before_install.sh $APP_NAME $CORE_BRANCH $DB
-  - pwd
-  - ls -l
   - cd ../core
   - composer install
   - bash ./core_install.sh $DB
@@ -47,9 +45,6 @@ script:
   # Run phpunit tests
   - cd tests
   - echo '{"host":"localhost","username":"test","password":"test"}' > config.json
-  - pwd
-  - ls -l
-  - ../../../lib/composer/bin/phpunit --version
   - ../../../lib/composer/bin/phpunit --configuration phpunit.xml
 
   # Create coverage report
