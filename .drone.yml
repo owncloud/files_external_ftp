@@ -237,6 +237,7 @@ matrix:
       NEED_CORE: true
       NEED_INSTALL_APP: true
       FTP_TYPE: proftp
+      COVERAGE: true
 
     - PHP_VERSION: 5.6
       OC_VERSION: daily-stable10-qa
