@@ -43,8 +43,11 @@ script:
   - find . -name \*.php -exec php -l "{}" \;
 
   # Run phpunit tests
-  - cd tests
+  - cd tests/unit
   - echo '{"host":"localhost","username":"test","password":"test"}' > config.json
+  - pwd
+  - ls -l
+  - cd ../../
   - pwd
   - ls -l
   - phpunit --version
