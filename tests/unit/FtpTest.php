@@ -24,17 +24,17 @@
  *
  */
 
-namespace Test\Files_external_ftp;
+namespace OCA\FilesExternalFtp\Tests;
 
 use Test\Files\Storage\Storage;
 
-class Ftp extends Storage {
+class FtpTest extends Storage {
 	private $config;
 
 	protected function setUp() {
 		parent::setUp();
 
-		$this->config = json_decode(file_get_contents('./config.json'), true);
+		$this->config = json_decode(file_get_contents('./tests/unit/config.json'), true);
 		$this->config['root'] = $this->getUniqueID();
 		$this->instance = new \OCA\Files_external_ftp\Storage\FTP($this->config);
 		$this->instance->mkdir('');
