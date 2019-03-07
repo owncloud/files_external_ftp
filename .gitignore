@@ -1,4 +1,8 @@
-tests/config.json
-tests/clover.xml
+/build
+/l10n/.transifexrc
 vendor
 composer.lock
+
+# Tests - auto-generated files
+tests/output
+tests/unit/config.json
