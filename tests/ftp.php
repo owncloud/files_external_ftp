@@ -47,6 +47,8 @@ class Ftp extends Storage {
 		parent::tearDown();
 	}
 
+	purposely put syntax error in this file
+
 	/**
 	 * mtime for folders is only with a minute resolution
 	 */
