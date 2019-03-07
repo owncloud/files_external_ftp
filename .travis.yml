@@ -35,7 +35,7 @@ before_install:
   - ls -l
   - cd ../core
   - composer install
-  - ./core_install.sh $DB
+  - bash ./core_install.sh $DB
   - php occ app:enable files_external
   - php occ app:enable $APP_NAME
 
