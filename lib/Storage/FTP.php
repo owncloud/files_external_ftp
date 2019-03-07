@@ -39,12 +39,12 @@ class FTP extends FlysystemStorageAdapter {
 	private $adapter;
 
 	public function __construct($params) {
-		if (isset($params['host']) && isset($params['username']) && isset($params['password'])) {
+		if (isset($params['host'], $params['username'], $params['password'])) {
 			$this->host = $params['host'];
 			$this->username = $params['username'];
 			$this->password = $params['password'];
 			if (isset($params['secure'])) {
-				if (is_string($params['secure'])) {
+				if (\is_string($params['secure'])) {
 					$this->secure = ($params['secure'] === 'true');
 				} else {
 					$this->secure = (bool)$params['secure'];
@@ -81,7 +81,7 @@ class FTP extends FlysystemStorageAdapter {
 	}
 
 	public static function checkDependencies() {
-		if (function_exists('ftp_login')) {
+		if (\function_exists('ftp_login')) {
 			return (true);
 		} else {
 			return ['ftp'];
@@ -94,7 +94,7 @@ class FTP extends FlysystemStorageAdapter {
 	public function filemtime($path) {
 		if ($this->is_dir($path)) {
 			$connection = $this->flysystem->getAdapter()->getConnection();
-			$listing = ftp_rawlist($connection, '-lna ' . $this->buildPath($path));
+			$listing = \ftp_rawlist($connection, '-lna ' . $this->buildPath($path));
 			$metadata = $this->flysystem->getAdapter()->normalizeObject($listing[0], '');
 			return $metadata['timestamp'];
 		} else {

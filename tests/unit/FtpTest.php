@@ -34,7 +34,7 @@ class FtpTest extends Storage {
 	protected function setUp() {
 		parent::setUp();
 
-		$this->config = json_decode(file_get_contents('./tests/unit/config.json'), true);
+		$this->config = \json_decode(\file_get_contents('./tests/unit/config.json'), true);
 		$this->config['root'] = $this->getUniqueID();
 		$this->instance = new \OCA\Files_external_ftp\Storage\FTP($this->config);
 		$this->instance->mkdir('');
@@ -52,10 +52,10 @@ class FtpTest extends Storage {
 	 */
 	public function testStat() {
 		$textFile = \OC::$SERVERROOT . '/tests/data/lorem.txt';
-		$ctimeStart = time();
-		$this->instance->file_put_contents('/lorem.txt', file_get_contents($textFile));
+		$ctimeStart = \time();
+		$this->instance->file_put_contents('/lorem.txt', \file_get_contents($textFile));
 		$this->assertTrue($this->instance->isReadable('/lorem.txt'));
-		$ctimeEnd = time();
+		$ctimeEnd = \time();
 		$mTime = $this->instance->filemtime('/lorem.txt');
 		$this->assertTrue($this->instance->hasUpdated('/lorem.txt', $ctimeStart - 5));
 		$this->assertTrue($this->instance->hasUpdated('/', $ctimeStart - 61));
@@ -63,7 +63,7 @@ class FtpTest extends Storage {
 		// check that ($ctimeStart - 5) <= $mTime <= ($ctimeEnd + 1)
 		$this->assertGreaterThanOrEqual(($ctimeStart - 5), $mTime);
 		$this->assertLessThanOrEqual(($ctimeEnd + 1), $mTime);
-		$this->assertEquals(filesize($textFile), $this->instance->filesize('/lorem.txt'));
+		$this->assertEquals(\filesize($textFile), $this->instance->filesize('/lorem.txt'));
 
 		$stat = $this->instance->stat('/lorem.txt');
 		//only size and mtime are required in the result
@@ -75,7 +75,7 @@ class FtpTest extends Storage {
 			$this->assertEquals($mTime, 100);
 		}
 
-		$mtimeStart = time();
+		$mtimeStart = \time();
 
 		$this->instance->unlink('/lorem.txt');
 		$this->assertTrue($this->instance->hasUpdated('/', $mtimeStart - 61));
