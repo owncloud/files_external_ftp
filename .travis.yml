@@ -45,6 +45,8 @@ script:
   # Run phpunit tests
   - cd tests
   - echo '{"host":"localhost","username":"test","password":"test"}' > config.json
+  - pwd
+  - ls -l
   - phpunit --version
   - phpunit --configuration phpunit.xml
 
