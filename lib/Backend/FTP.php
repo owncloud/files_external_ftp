@@ -27,7 +27,6 @@ use \OCP\Files\External\DefinitionParameter;
 use \OCP\Files\External\Auth\AuthMechanism;
 
 class FTP extends Backend {
-
 	public function __construct(IL10N $l) {
 		$this
 			->setIdentifier('ftp')
@@ -48,5 +47,4 @@ class FTP extends Backend {
 			])
 			->addAuthScheme(AuthMechanism::SCHEME_BUILTIN);
 	}
-
 }

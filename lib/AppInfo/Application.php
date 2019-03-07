@@ -28,8 +28,7 @@ use OCP\Files\External\Config\IBackendProvider;
  * @package OCA\Files_External_FTP\AppInfo
  */
 class Application extends App implements IBackendProvider {
-
-	public function __construct(array $urlParams = array()) {
+	public function __construct(array $urlParams = []) {
 		parent::__construct('files_external_ftp', $urlParams);
 
 		$container = $this->getContainer();
