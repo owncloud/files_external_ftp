@@ -5,7 +5,7 @@ php:
 
 env:
   global:
-    - CORE_BRANCH=declare-tearDownAfterClass-void
+    - CORE_BRANCH=master
     - APP_NAME=files_external_ftp
     - DB=sqlite
   matrix:
