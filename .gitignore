@@ -1,4 +1,7 @@
-tests/config.json
-tests/clover.xml
+/build/
 vendor
 composer.lock
+
+# Tests - auto-generated files
+/tests/coverage*
+/tests/output/clover.xml
