@@ -1,13 +1,11 @@
 language: php
 php:
-  - 5.6
-  - 7.0
   - 7.1
   - 7.2
 
 env:
   global:
-    - CORE_BRANCH=master
+    - CORE_BRANCH=declare-tearDownAfterClass-void
     - APP_NAME=files_external_ftp
     - DB=sqlite
   matrix:
@@ -45,6 +43,7 @@ script:
   # Run phpunit tests
   - cd tests
   - echo '{"host":"localhost","username":"test","password":"test"}' > config.json
+  - phpunit --version
   - phpunit --configuration phpunit.xml
 
   # Create coverage report
@@ -52,4 +51,9 @@ script:
   - sh -c "if [ '$TRAVIS_PHP_VERSION' != 'hhvm' ]; then php ocular.phar code-coverage:upload --format=php-clover clover.xml; fi"
 
 matrix:
+  include:
+    - php: 7.1
+      env: FTPD=proftpd CORE_BRANCH=stable10
+    - php: 7.1
+      env: FTPD=vsftpd CORE_BRANCH=stable10
   fast_finish: true
