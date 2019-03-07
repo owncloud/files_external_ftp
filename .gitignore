@@ -1,4 +1,3 @@
-build
 tests/config.json
 tests/clover.xml
 vendor
