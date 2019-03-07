@@ -24,11 +24,11 @@
  *
  */
 
-namespace Test\Files_external_ftp;
+namespace OCA\Files_External_Ftp\Tests\unit;
 
 use Test\Files\Storage\Storage;
 
-class Ftp extends Storage {
+class FtpTest extends Storage {
 	private $config;
 
 	protected function setUp(): void {
