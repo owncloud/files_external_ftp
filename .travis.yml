@@ -49,8 +49,6 @@ script:
   - echo '{"host":"localhost","username":"test","password":"test"}' > config.json
   - pwd
   - ls -l
-  - phpunit --version
-  - phpunit --configuration phpunit.xml
   - ../../../lib/composer/bin/phpunit --version
   - ../../../lib/composer/bin/phpunit --configuration phpunit.xml
 
