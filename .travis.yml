@@ -60,8 +60,12 @@ script:
 
 matrix:
   include:
-    - php: 7.1
+    - php: 5.6
       env: FTPD=proftpd CORE_BRANCH=stable10
-    - php: 7.1
+    - php: 7.0
+      env: FTPD=proftpd CORE_BRANCH=stable10
+    - php: 5.6
+      env: FTPD=vsftpd CORE_BRANCH=stable10
+    - php: 7.0
       env: FTPD=vsftpd CORE_BRANCH=stable10
   fast_finish: true
