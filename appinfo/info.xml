@@ -28,7 +28,7 @@ Administrators and users (when enabled) can find external storage configuration 
 	<screenshot>https://raw.githubusercontent.com/owncloud/promo/e1dd604d66b4c5f765579b4c160de3268169ea3c/ownCloud%20logo%20square.png</screenshot>
 
 	<dependencies>
-		<owncloud min-version="10" max-version="10"/>
+		<owncloud min-version="10.2" max-version="10"/>
 	</dependencies>
 	<website>https://github.com/owncloud/files_external_ftp/</website>
 	<bugs>https://github.com/owncloud/files_external_ftp/issues</bugs>
