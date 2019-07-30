@@ -216,6 +216,15 @@ matrix:
 
     # Unit Tests
     # Using proftp
+    - PHP_VERSION: 7.0
+      OC_VERSION: daily-master-qa
+      TEST_SUITE: phpunit
+      DB_TYPE: mysql
+      DB_NAME: owncloud
+      NEED_CORE: true
+      NEED_INSTALL_APP: true
+      FTP_TYPE: proftp
+
     - PHP_VERSION: 7.1
       OC_VERSION: daily-master-qa
       TEST_SUITE: phpunit
@@ -235,54 +244,9 @@ matrix:
       FTP_TYPE: proftp
       COVERAGE: true
 
-    - PHP_VERSION: 7.0
-      OC_VERSION: daily-stable10-qa
-      TEST_SUITE: phpunit
-      DB_TYPE: mysql
-      DB_NAME: owncloud
-      NEED_CORE: true
-      NEED_INSTALL_APP: true
-      FTP_TYPE: proftp
-
-    - PHP_VERSION: 7.1
-      OC_VERSION: daily-stable10-qa
-      TEST_SUITE: phpunit
-      DB_TYPE: mysql
-      DB_NAME: owncloud
-      NEED_CORE: true
-      NEED_INSTALL_APP: true
-      FTP_TYPE: proftp
-
-    - PHP_VERSION: 7.2
-      OC_VERSION: daily-stable10-qa
-      TEST_SUITE: phpunit
-      DB_TYPE: mysql
-      DB_NAME: owncloud
-      NEED_CORE: true
-      NEED_INSTALL_APP: true
-      FTP_TYPE: proftp
-
     # Using vsftp
-    - PHP_VERSION: 7.1
-      OC_VERSION: daily-master-qa
-      TEST_SUITE: phpunit
-      DB_TYPE: mysql
-      DB_NAME: owncloud
-      NEED_CORE: true
-      NEED_INSTALL_APP: true
-      FTP_TYPE: vsftp
-
-    - PHP_VERSION: 7.2
-      OC_VERSION: daily-master-qa
-      TEST_SUITE: phpunit
-      DB_TYPE: mysql
-      DB_NAME: owncloud
-      NEED_CORE: true
-      NEED_INSTALL_APP: true
-      FTP_TYPE: vsftp
-
     - PHP_VERSION: 7.0
-      OC_VERSION: daily-stable10-qa
+      OC_VERSION: daily-master-qa
       TEST_SUITE: phpunit
       DB_TYPE: mysql
       DB_NAME: owncloud
@@ -291,7 +255,7 @@ matrix:
       FTP_TYPE: vsftp
 
     - PHP_VERSION: 7.1
-      OC_VERSION: daily-stable10-qa
+      OC_VERSION: daily-master-qa
       TEST_SUITE: phpunit
       DB_TYPE: mysql
       DB_NAME: owncloud
@@ -300,7 +264,7 @@ matrix:
       FTP_TYPE: vsftp
 
     - PHP_VERSION: 7.2
-      OC_VERSION: daily-stable10-qa
+      OC_VERSION: daily-master-qa
       TEST_SUITE: phpunit
       DB_TYPE: mysql
       DB_NAME: owncloud
