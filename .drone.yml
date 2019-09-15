@@ -105,7 +105,7 @@ trigger:
 ---
 kind: pipeline
 type: docker
-name: phpunit-php7.0-mariadb10.2
+name: phpunit-proftp-php7.0-mariadb10.2
 
 platform:
   os: linux
@@ -194,7 +194,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: phpunit-php7.1-mariadb10.2
+name: phpunit-proftp-php7.1-mariadb10.2
 
 platform:
   os: linux
@@ -283,7 +283,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: phpunit-php7.2-mariadb10.2
+name: phpunit-proftp-php7.2-mariadb10.2
 
 platform:
   os: linux
@@ -372,7 +372,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: phpunit-php7.3-mariadb10.2
+name: phpunit-proftp-php7.3-mariadb10.2
 
 platform:
   os: linux
@@ -461,7 +461,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: phpunit-php7.0-mysql5.5
+name: phpunit-vsftp-php7.0-mysql5.5
 
 platform:
   os: linux
@@ -541,7 +541,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: phpunit-php7.1-mysql5.5
+name: phpunit-vsftp-php7.1-mysql5.5
 
 platform:
   os: linux
@@ -621,7 +621,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: phpunit-php7.2-mysql5.5
+name: phpunit-vsftp-php7.2-mysql5.5
 
 platform:
   os: linux
@@ -701,7 +701,7 @@ depends_on:
 ---
 kind: pipeline
 type: docker
-name: phpunit-php7.3-mysql5.5
+name: phpunit-vsftp-php7.3-mysql5.5
 
 platform:
   os: linux
@@ -805,13 +805,13 @@ trigger:
   - refs/heads/master
 
 depends_on:
-- phpunit-php7.0-mariadb10.2
-- phpunit-php7.1-mariadb10.2
-- phpunit-php7.2-mariadb10.2
-- phpunit-php7.3-mariadb10.2
-- phpunit-php7.0-mysql5.5
-- phpunit-php7.1-mysql5.5
-- phpunit-php7.2-mysql5.5
-- phpunit-php7.3-mysql5.5
+- phpunit-proftp-php7.0-mariadb10.2
+- phpunit-proftp-php7.1-mariadb10.2
+- phpunit-proftp-php7.2-mariadb10.2
+- phpunit-proftp-php7.3-mariadb10.2
+- phpunit-vsftp-php7.0-mysql5.5
+- phpunit-vsftp-php7.1-mysql5.5
+- phpunit-vsftp-php7.2-mysql5.5
+- phpunit-vsftp-php7.3-mysql5.5
 
 ...
