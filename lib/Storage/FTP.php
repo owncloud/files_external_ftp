@@ -34,7 +34,7 @@ class FTP extends FlysystemStorageAdapter {
 	private $port;
 
 	/**
-	 * @var \League\Flysystem\Adapter\FTP
+	 * @var \League\Flysystem\Adapter\Ftp
 	 */
 	private $adapter;
 
@@ -93,9 +93,13 @@ class FTP extends FlysystemStorageAdapter {
 	 */
 	public function filemtime($path) {
 		if ($this->is_dir($path)) {
-			$connection = $this->flysystem->getAdapter()->getConnection();
+			/**
+			 * @var \OCA\Files_external_ftp\Storage\Adapter
+			 */
+			$adapter = $this->flysystem->getAdapter();
+			$connection = $adapter->getConnection();
 			$listing = \ftp_rawlist($connection, '-lna ' . $this->buildPath($path));
-			$metadata = $this->flysystem->getAdapter()->normalizeObject($listing[0], '');
+			$metadata = $adapter->normalizeObject($listing[0], '');
 			return $metadata['timestamp'];
 		} else {
 			return parent::filemtime($path);

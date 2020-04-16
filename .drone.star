@@ -19,6 +19,8 @@ config = {
 		},
 	},
 
+	'phpstan': True,
+
 	'phpunit': {
 		'proftp' : {
 			'phpVersions': [

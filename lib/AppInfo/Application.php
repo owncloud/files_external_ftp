@@ -33,7 +33,11 @@ class Application extends App implements IBackendProvider {
 
 		$container = $this->getContainer();
 
-		$backendService = $container->getServer()->getStoragesBackendService();
+		/**
+		 * @var \OC\Server
+		 */
+		$server = $container->getServer();
+		$backendService = $server->getStoragesBackendService();
 		$backendService->registerBackendProvider($this);
 	}
 
