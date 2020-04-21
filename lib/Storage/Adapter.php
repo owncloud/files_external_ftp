@@ -22,7 +22,6 @@ namespace OCA\Files_external_ftp\Storage;
 
 use League\Flysystem\Adapter\Ftp as FtpAdapter;
 use League\Flysystem\AdapterInterface;
-use League\Flysystem\NotSupportedException;
 
 class Adapter extends FtpAdapter {
 	/**

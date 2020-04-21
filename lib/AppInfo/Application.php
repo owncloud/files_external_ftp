@@ -37,6 +37,7 @@ class Application extends App implements IBackendProvider {
 		 * @var \OC\Server
 		 */
 		$server = $container->getServer();
+		/** @phan-suppress-next-line PhanUndeclaredMethod */
 		$backendService = $server->getStoragesBackendService();
 		$backendService->registerBackendProvider($this);
 	}

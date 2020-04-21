@@ -97,8 +97,10 @@ class FTP extends FlysystemStorageAdapter {
 			 * @var \OCA\Files_external_ftp\Storage\Adapter
 			 */
 			$adapter = $this->flysystem->getAdapter();
+			/** @phan-suppress-next-line PhanUndeclaredMethod */
 			$connection = $adapter->getConnection();
 			$listing = \ftp_rawlist($connection, '-lna ' . $this->buildPath($path));
+			/** @phan-suppress-next-line PhanUndeclaredMethod */
 			$metadata = $adapter->normalizeObject($listing[0], '');
 			return $metadata['timestamp'];
 		} else {
