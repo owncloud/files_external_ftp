@@ -76,6 +76,10 @@ config = {
 					'environment': {
 						'FTP_USER': 'test',
 						'FTP_PASS': 'test',
+						'PASV_MIN_PORT': '9000',
+						'PASV_MAX_PORT': '9010',
+						'PASV_ADDR_RESOLVE': 'YES',
+						'PASV_ADDRESS': 'vsftp',
 					}
 				}
 			],
