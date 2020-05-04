@@ -10,3 +10,4 @@ vendor-bin/**/composer.lock
 # Tests - auto-generated files
 tests/output
 tests/unit/config.json
+.phpunit.result.cache
