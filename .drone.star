@@ -34,6 +34,7 @@ config = {
 					'pull': 'always',
 					'commands': [
 						'echo \'{"host":"proftp","username":"test","password":"test"}\' > tests/unit/config.json',
+						'wait-for-it -t 600 proftp:21',
 					]
 				}
 			],
@@ -67,6 +68,7 @@ config = {
 					'pull': 'always',
 					'commands': [
 						'echo \'{"host":"vsftp","username":"test","password":"test"}\' > tests/unit/config.json',
+						'wait-for-it -t 600 vsftp:21',
 					]
 				}
 			],
