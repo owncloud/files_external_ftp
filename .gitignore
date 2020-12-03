@@ -11,3 +11,6 @@ vendor-bin/**/composer.lock
 tests/output
 tests/unit/config.json
 .phpunit.result.cache
+
+# SonarCloud scanner
+.scannerwork
