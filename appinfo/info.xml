@@ -29,6 +29,7 @@ Administrators and users (when enabled) can find external storage configuration 
 
 	<dependencies>
 		<owncloud min-version="10.2" max-version="10"/>
+		<php min-version="7.2" />
 	</dependencies>
 	<website>https://github.com/owncloud/files_external_ftp/</website>
 	<bugs>https://github.com/owncloud/files_external_ftp/issues</bugs>

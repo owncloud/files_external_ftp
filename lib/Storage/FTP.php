@@ -20,7 +20,10 @@
  */
 namespace OCA\Files_external_ftp\Storage;
 
-use League\Flysystem\FileNotFoundException;
+use League\Flysystem\FilesystemException;
+use \League\Flysystem\Ftp\FtpAdapter;
+use \League\Flysystem\Ftp\FtpConnectionProvider;
+use \League\Flysystem\Ftp\FtpConnectionOptions;
 use OCP\Files\Storage\FlysystemStorageAdapter;
 use OCP\Files\Storage\PolyFill\CopyDirectory;
 
@@ -34,9 +37,13 @@ class FTP extends FlysystemStorageAdapter {
 	private $port;
 
 	/**
-	 * @var \League\Flysystem\Adapter\Ftp
+	 * @var FtpAdapter
 	 */
 	private $adapter;
+	/**
+	 * @var resource
+	 */
+	private $connection;
 
 	public function __construct($params) {
 		if (isset($params['host'], $params['username'], $params['password'])) {
@@ -55,13 +62,18 @@ class FTP extends FlysystemStorageAdapter {
 			$this->root = isset($params['root']) ? $params['root'] : '/';
 			$this->port = isset($params['port']) ? $params['port'] : 21;
 
-			$this->adapter = new Adapter([
+			$options = FtpConnectionOptions::fromArray([
 				'host' => $params['host'],
+				'root' => '',
 				'username' => $params['username'],
 				'password' => $params['password'],
-				'port' => $this->port,
-				'ssl' => $this->secure
+				'port' => (int)$this->port,
+				'ssl' => $this->secure,
 			]);
+
+			$conProvider = new FtpConnectionProvider();
+			$this->connection = $conProvider->createConnection($options);
+			$this->adapter = new FtpAdapter($options, $conProvider);
 			$this->buildFlySystem($this->adapter);
 		} else {
 			throw new \Exception('Creating \OCA\Files_external_ftp\FTP storage failed');
@@ -73,7 +85,9 @@ class FTP extends FlysystemStorageAdapter {
 	}
 
 	public function disconnect() {
-		$this->adapter->disconnect();
+		if (\is_resource($this->connection)) {
+			\ftp_close($this->connection);
+		}
 	}
 
 	public function __destruct() {
@@ -93,19 +107,21 @@ class FTP extends FlysystemStorageAdapter {
 	 */
 	public function filemtime($path) {
 		if ($this->is_dir($path)) {
-			/**
-			 * @var \OCA\Files_external_ftp\Storage\Adapter
-			 */
-			$adapter = $this->flysystem->getAdapter();
-			/** @phan-suppress-next-line PhanUndeclaredMethod */
-			$connection = $adapter->getConnection();
-			$listing = \ftp_rawlist($connection, '-lna ' . $this->buildPath($path));
-			/** @phan-suppress-next-line PhanUndeclaredMethod */
-			$metadata = $adapter->normalizeObject($listing[0], '');
-			return $metadata['timestamp'];
-		} else {
-			return parent::filemtime($path);
+			return false;
 		}
+		/* @phan-suppress-next-line PhanRedefinedClassReference */
+		return $this->flysystem->lastModified($this->buildPath($path));
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function filesize($path) {
+		if ($this->is_dir($path)) {
+			return false;
+		}
+		/* @phan-suppress-next-line PhanRedefinedClassReference */
+		return $this->flysystem->fileSize($this->buildPath($path));
 	}
 
 	/**
@@ -113,45 +129,22 @@ class FTP extends FlysystemStorageAdapter {
 	 */
 	public function rmdir($path) {
 		try {
-			$result = @$this->flysystem->deleteDir($this->buildPath($path));
-			// recursive rmdir support depends on the ftp server
-			if ($result) {
-				return $result;
-			} else {
-				return $this->recursiveRmDir($path);
-			}
-		} catch (FileNotFoundException $e) {
+			/* @phan-suppress-next-line PhanRedefinedClassReference */
+			$this->flysystem->deleteDirectory($this->buildPath($path));
+			return true;
+			/* @phan-suppress-next-line PhanRedefinedClassReference */
+		} catch (FilesystemException $e) {
 			return false;
 		}
-	}
-
-	/**
-	 * @param string $path
-	 * @return bool
-	 */
-	private function recursiveRmDir($path) {
-		$contents = $this->flysystem->listContents($this->buildPath($path));
-		$result = true;
-		foreach ($contents as $content) {
-			if ($content['type'] === 'dir') {
-				$result = $result && $this->recursiveRmDir($path . '/' . $content['basename']);
-			} else {
-				$result = $result && $this->flysystem->delete($this->buildPath($path . '/' . $content['basename']));
-			}
-		}
-		$result = $result && @$this->flysystem->deleteDir($this->buildPath($path));
-
-		return $result;
 	}
 
 	/**
 	 * {@inheritdoc}
 	 */
 	public function stat($path) {
-		$info = $this->flysystem->getWithMetadata($this->buildPath($path), ['size']);
 		return [
 			'mtime' => $this->filemtime($path),
-			'size' => $info['size']
+			'size' =>  $this->filesize($path),
 		];
 	}
 }
