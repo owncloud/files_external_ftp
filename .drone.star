@@ -5,6 +5,8 @@ config = {
 		'from_secret': 'private_rocketchat'
 	},
 
+	'appInstallCommand': 'composer install -n --no-progress',
+
 	'branches': [
 		'master'
 	],
