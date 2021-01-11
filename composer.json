@@ -1,6 +1,8 @@
 {
   "name": "owncloud/files_external_ftp",
   "config" : {
+    "optimize-autoloader": true,
+    "classmap-authoritative": true,
     "platform": {
       "php": "7.2"
     }
