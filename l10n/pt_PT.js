@@ -9,4 +9,4 @@ OC.L10N.register(
     "Port" : "Porta",
     "Secure ftps://" : "ftps:// Seguro"
 },
-"nplurals=2; plural=(n != 1);");
+"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
