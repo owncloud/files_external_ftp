@@ -7,6 +7,6 @@ OC.L10N.register(
     "Host" : "Host",
     "Root" : "Root",
     "Port" : "Порт",
-    "Secure ftps://" : "Сигурен ftps://"
+    "Secure ftps://" : "Защитен ftps://"
 },
 "nplurals=2; plural=(n != 1);");

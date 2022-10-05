@@ -5,6 +5,6 @@
     "Host" : "Host",
     "Root" : "Root",
     "Port" : "Порт",
-    "Secure ftps://" : "Сигурен ftps://"
+    "Secure ftps://" : "Защитен ftps://"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
