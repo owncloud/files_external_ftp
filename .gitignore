@@ -18,3 +18,4 @@ tests/unit/config.json
 
 # Generated from .drone.star
 .drone.yml
+.idea
