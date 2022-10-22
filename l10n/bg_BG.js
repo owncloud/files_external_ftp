@@ -4,7 +4,7 @@ OC.L10N.register(
     "FTP (Fly)" : "FTP (Fly)",
     "Username" : "Потребителско име",
     "Password" : "Парола",
-    "Host" : "Host",
+    "Host" : "Хост",
     "Root" : "Root",
     "Port" : "Порт",
     "Secure ftps://" : "Защитен ftps://"
