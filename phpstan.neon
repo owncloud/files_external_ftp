@@ -6,3 +6,4 @@ parameters:
     -
       message: '#OCA\\Files_external_ftp\\Storage\\FTP::\$password is never read, only written.#'
       path: lib/Storage/FTP.php
+      count: 1
