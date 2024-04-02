@@ -24,7 +24,7 @@ SONARSOURCE_SONAR_SCANNER_CLI = "sonarsource/sonar-scanner-cli"
 
 # repos specific to files_external_ftp
 FAURIA_VSFTPD = "fauria/vsftpd"
-HAUPTMEDIA_PROFTPD = "hauptmedia/proftpd"
+DRIESVA_PROFTPD = "driesva/proftpd:1.3.8"
 
 DEFAULT_PHP_VERSION = "7.4"
 DEFAULT_NODEJS_VERSION = "14"
@@ -95,7 +95,7 @@ config = {
             "extraServices": [
                 {
                     "name": "proftp",
-                    "image": HAUPTMEDIA_PROFTPD,
+                    "image": DRIESVA_PROFTPD,
                     "environment": {
                         "FTP_USERNAME": "test",
                         "FTP_PASSWORD": "test",
