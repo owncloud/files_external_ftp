@@ -170,8 +170,7 @@ jobs:
           FTP_PASS: tstpwd
           PASV_MIN_PORT: 9000
           PASV_MAX_PORT: 9010
-          PASV_ADDR_RESOLVE: YES
-          PASV_ADDRESS: localhost
+          PASV_ADDRESS: 127.0.0.1
         run: |
           docker run -d --rm --network host \
             --name vsftpd \
