@@ -45,3 +45,23 @@ jobs:
     with:
       app-name: ${{ needs.get-vars.outputs.app-name }}
       php-versions: ${{ needs.get-vars.outputs.php-versions }}
+
+  php-unit-proftp:
+    name: PHP Unit with proftp service
+    needs:
+      - get-vars
+    uses: ./.github/workflows/php-unit-ftp.yml
+    with:
+      app-name: ${{ needs.get-vars.outputs.app-name }}
+      php-versions: ${{ needs.get-vars.outputs.php-versions }}
+      use-proftp: true
+
+  php-unit-vsftp:
+    name: PHP Unit with vsftp service
+    needs:
+      - get-vars
+    uses: ./.github/workflows/php-unit-ftp.yml
+    with:
+      app-name: ${{ needs.get-vars.outputs.app-name }}
+      php-versions: ${{ needs.get-vars.outputs.php-versions }}
+      use-vsftp: true
