@@ -155,14 +155,14 @@ jobs:
         env:
           APP_NAME: ${{ inputs.app-name }}
           FTP_USERNAME: test
-          FTP_PASSWORD: tstpwd
+          FTP_PASSWORD: test
         run: |
           docker run -d --rm --network host \
             -p 20:20 -p 21:21 \
             --name proftp \
             driesva/proftpd:1.3.8
           cd "apps/${APP_NAME}"
-          echo '{"host":"localhost","username":"test","password":"tstpwd"}' > tests/unit/config.json
+          echo '{"host":"localhost","username":"test","password":"test"}' > tests/unit/config.json
           cat tests/unit/config.json
 
       - name: Run vsftp service
@@ -170,7 +170,7 @@ jobs:
         env:
           APP_NAME: ${{ inputs.app-name }}
           FTP_USER: test
-          FTP_PASS: tstpwd
+          FTP_PASS: test
           PASV_MIN_PORT: 9000
           PASV_MAX_PORT: 9010
           PASV_ADDR_RESOLVE: YES
@@ -181,7 +181,7 @@ jobs:
             --name vsftpd \
             fauria/vsftpd
           cd "apps/${APP_NAME}"
-          echo '{"host":"localhost","username":"test","password":"tstpwd"}' > tests/unit/config.json
+          echo '{"host":"localhost","username":"test","password":"test"}' > tests/unit/config.json
           cat tests/unit/config.json
 
       - name: Install Core Dependencies
