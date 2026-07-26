@@ -114,20 +114,20 @@ jobs:
           fi
 
       - name: Clone owncloud/core
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: owncloud/core
           ref: ${{ case(matrix.php == '7.4', inputs.core-ref-php74, inputs.core-ref) }}
 
       - name: Checkout apps/${{ inputs.app-name }}
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           path: apps/${{ inputs.app-name }}
           repository: ${{ inputs.app-repository }}
 
       - name: Checkout apps/${{ inputs.additional-app }}
         if: ${{ inputs.additional-app != '' }}
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           path: apps/${{ inputs.additional-app }}
           repository: owncloud/${{ inputs.additional-app }}
