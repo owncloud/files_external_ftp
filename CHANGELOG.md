@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 
-## [0.3.2] - 2026-09-09
+## [0.3.2] - 2026-09-23
 
 ### Changed
 - Repackaged so the release artifact contains only the app payload. The previous
@@ -40,7 +40,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
  - Initial marketplace release
 
-[Unreleased]: https://github.com/owncloud/files_external_ftp/compare/v0.3.1..master
+[Unreleased]: https://github.com/owncloud/files_external_ftp/compare/v0.3.2..master
+[0.3.2]: https://github.com/owncloud/files_external_ftp/compare/v0.3.1..v0.3.2
 [0.3.1]: https://github.com/owncloud/files_external_ftp/compare/v0.3.0..v0.3.1
 [0.3.0]: https://github.com/owncloud/files_external_ftp/compare/v0.2.1..v0.3.0
 [0.2.1]: https://github.com/owncloud/files_external_ftp/compare/v0.2.0...v0.2.1
