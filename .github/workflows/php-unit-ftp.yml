@@ -79,7 +79,7 @@ jobs:
 
     services:
       mysql:
-        image: >-
+        image: >- # zizmor: ignore[unpinned-images] the tag comes from the caller's databases input
           ${{ (startsWith(matrix.database,'mysql:') || startsWith(matrix.database,'mariadb:')) && matrix.database || '' }}
         env:
           MYSQL_ROOT_PASSWORD: password
@@ -94,7 +94,7 @@ jobs:
         ports:
           - 3306:3306
       postgres:
-        image: ${{ startsWith(matrix.database,'postgres:') && matrix.database || '' }}
+        image: ${{ startsWith(matrix.database,'postgres:') && matrix.database || '' }} # zizmor: ignore[unpinned-images] the tag comes from the caller's databases input
         env:
           POSTGRES_DB: owncloud
           POSTGRES_USER: owncloud
@@ -118,12 +118,14 @@ jobs:
         with:
           repository: owncloud/core
           ref: ${{ case(matrix.php == '7.4', inputs.core-ref-php74, inputs.core-ref) }}
+          persist-credentials: false
 
       - name: Checkout apps/${{ inputs.app-name }}
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           path: apps/${{ inputs.app-name }}
           repository: ${{ inputs.app-repository }}
+          persist-credentials: false
 
       - name: Checkout apps/${{ inputs.additional-app }}
         if: ${{ inputs.additional-app != '' }}
@@ -132,6 +134,7 @@ jobs:
           path: apps/${{ inputs.additional-app }}
           repository: owncloud/${{ inputs.additional-app }}
           token: ${{ inputs.additional-app-github-token || github.token }}
+          persist-credentials: false
 
       - name: Install Linux packages
         if: ${{ inputs.additional-packages }}
@@ -141,7 +144,7 @@ jobs:
           sudo apt-get install $ADDITIONAL_PACKAGES
 
       - name: Setup PHP
-        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # v2.40.0
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
         with:
           php-version: ${{ matrix.php }}
           extensions: apcu, ctype, curl, exif, fileinfo, gd, iconv, imagick, intl, json, mbstring, memcached, pdo, posix, simplexml, xml, zip, smbclient, ldap, krb5
